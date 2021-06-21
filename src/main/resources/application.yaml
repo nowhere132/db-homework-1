@@ -3,4 +3,9 @@ spring:
     url: jdbc:mysql://us-cdbr-east-04.cleardb.com
     username: be4bdc8e8f9535
     password: d73f98a9
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 # mysql://be4bdc8e8f9535:d73f98a9@us-cdbr-east-04.cleardb.com/heroku_b928c868f6376ce?reconnect=true
