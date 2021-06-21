@@ -1,8 +1,8 @@
 package nowhere132.dbhomework1.utils;
 
-import nowhere132.dbhomework1.models.schedule.ClassInfo;
-import nowhere132.dbhomework1.models.schedule.Schedule;
-import nowhere132.dbhomework1.models.Student;
+import nowhere132.dbhomework1.entities.schedule.ClassInfo;
+import nowhere132.dbhomework1.entities.schedule.Schedule;
+import nowhere132.dbhomework1.entities.Student;
 
 import java.util.List;
 

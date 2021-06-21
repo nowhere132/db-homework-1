@@ -1,4 +1,4 @@
-package nowhere132.dbhomework1.models.schedule;
+package nowhere132.dbhomework1.entities.schedule;
 
 import lombok.*;
 

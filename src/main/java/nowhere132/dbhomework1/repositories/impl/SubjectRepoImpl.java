@@ -1,20 +1,26 @@
 package nowhere132.dbhomework1.repositories.impl;
 
-import nowhere132.dbhomework1.models.Subject;
+import lombok.AllArgsConstructor;
+import nowhere132.dbhomework1.entities.Subject;
 import nowhere132.dbhomework1.repositories.SubjectRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 @Repository
+@AllArgsConstructor
 public class SubjectRepoImpl implements SubjectRepo {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    @PersistenceContext
+    private final EntityManager entityManager;
 
     @Override
     public Subject getBySubjectId(String subjectId) {
-        String sql = "select * from heroku_b4d99ba979d476e.subject where id = '" + subjectId + "'";
-        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Subject.class));
+        String sql = "SELECT * FROM heroku_b928c868f6376ce.subject where id = :subjectId";
+        Query query = entityManager.createNativeQuery(sql, Subject.class);
+        query.setParameter("subjectId", subjectId);
+        return (Subject) query.getSingleResult();
     }
 }

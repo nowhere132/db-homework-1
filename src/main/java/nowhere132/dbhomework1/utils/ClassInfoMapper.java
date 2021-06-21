@@ -1,8 +1,8 @@
 package nowhere132.dbhomework1.utils;
 
-import nowhere132.dbhomework1.models.Class;
-import nowhere132.dbhomework1.models.Subject;
-import nowhere132.dbhomework1.models.schedule.ClassInfo;
+import nowhere132.dbhomework1.entities.Class;
+import nowhere132.dbhomework1.entities.Subject;
+import nowhere132.dbhomework1.entities.schedule.ClassInfo;
 
 public class ClassInfoMapper {
     public static ClassInfo classSubjectToClassInfo(Class cl, Subject subj) {

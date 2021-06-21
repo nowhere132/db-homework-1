@@ -1,7 +1,7 @@
 package nowhere132.dbhomework1.controllers;
 
 import lombok.RequiredArgsConstructor;
-import nowhere132.dbhomework1.models.schedule.Schedule;
+import nowhere132.dbhomework1.entities.schedule.Schedule;
 import nowhere132.dbhomework1.services.ScheduleService;
 import org.springframework.web.bind.annotation.*;
 

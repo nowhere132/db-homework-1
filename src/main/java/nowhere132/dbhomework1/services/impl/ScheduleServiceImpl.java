@@ -2,11 +2,11 @@ package nowhere132.dbhomework1.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import nowhere132.dbhomework1.errors.CustomException;
-import nowhere132.dbhomework1.models.Class;
-import nowhere132.dbhomework1.models.Subject;
-import nowhere132.dbhomework1.models.schedule.ClassInfo;
-import nowhere132.dbhomework1.models.schedule.Schedule;
-import nowhere132.dbhomework1.models.Student;
+import nowhere132.dbhomework1.entities.Class;
+import nowhere132.dbhomework1.entities.Subject;
+import nowhere132.dbhomework1.entities.schedule.ClassInfo;
+import nowhere132.dbhomework1.entities.schedule.Schedule;
+import nowhere132.dbhomework1.entities.Student;
 import nowhere132.dbhomework1.repositories.ClassRepo;
 import nowhere132.dbhomework1.repositories.StudentRepo;
 import nowhere132.dbhomework1.repositories.SubjectRepo;

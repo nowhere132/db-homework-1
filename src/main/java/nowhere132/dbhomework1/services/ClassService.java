@@ -1,6 +1,6 @@
 package nowhere132.dbhomework1.services;
 
-import nowhere132.dbhomework1.models.Class;
+import nowhere132.dbhomework1.entities.Class;
 
 import java.util.List;
 

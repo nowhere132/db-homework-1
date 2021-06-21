@@ -1,7 +1,7 @@
 package nowhere132.dbhomework1.controllers;
 
 import lombok.RequiredArgsConstructor;
-import nowhere132.dbhomework1.models.Student;
+import nowhere132.dbhomework1.entities.Student;
 import nowhere132.dbhomework1.services.StudentService;
 import org.springframework.web.bind.annotation.*;
 

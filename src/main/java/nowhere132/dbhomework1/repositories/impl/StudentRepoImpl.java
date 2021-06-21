@@ -1,20 +1,28 @@
 package nowhere132.dbhomework1.repositories.impl;
 
-import nowhere132.dbhomework1.models.Student;
+import lombok.AllArgsConstructor;
+import nowhere132.dbhomework1.entities.Student;
 import nowhere132.dbhomework1.repositories.StudentRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 @Repository
+@AllArgsConstructor
 public class StudentRepoImpl implements StudentRepo {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    @PersistenceContext
+    private final EntityManager entityManager;
 
     @Override
     public Student getByStudentId(int studentId) {
-        String sql = "select * from heroku_b4d99ba979d476e.student std where std.id = " + studentId;
-        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Student.class));
+        System.out.println("/------------------------");
+        System.out.println("DEBUGGING: " + studentId);
+        System.out.println("/------------------------");
+        String sql = "SELECT * from heroku_b928c868f6376ce.student WHERE id = :studentId";
+        Query query = entityManager.createNativeQuery(sql, Student.class);
+        query.setParameter("studentId", studentId);
+        return (Student) query.getSingleResult();
     }
 }
